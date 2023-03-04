@@ -105,15 +105,16 @@ def compute_std(arr):
 
 
 # Plot a single Y vs X. Specify the type of marker as well (eg bs == blue square)
-def plot_single_EE312_data(x, x_unit, x_name, y, y_unit, y_name, marker):
+def plot_single_EE312_data(x, x_unit, x_name, y, y_unit, y_name, y_label, marker):
 
-    plt.plot(x, y, marker)
-    plt_title_str = y_name + "vs" + x_name
+    plt.plot(x, y, marker, label=y_label)
+    plt_title_str = y_name + " vs" + x_name
     x_axis_str =  x_name + "(" + x_unit + ")"
     y_axis_str =  y_name + "(" + y_unit + ")"
     plt.suptitle(plt_title_str)
     plt.xlabel(x_axis_str)
     plt.ylabel(y_axis_str)
+    plt.legend(loc="lower right")
     plt.show()
 
 # Plot multiple Y vs one X. Specify the type of marker(s) as well (eg bs == blue square)
@@ -166,11 +167,13 @@ if __name__ == "__main__":
 
     # Example:
     # Marker options: 'bs', 'g^', 'r--', etc
-    #plot_single_EE312_data(measurements[0], units[0], name[0], measurements[2], units[2], name[2], 'bs')
+    tokenized_filename = filname.split("/")
+    label = tokenized_filename[-1]
+    plot_single_EE312_data(measurements[0], units[0], name[0], measurements[2], units[2], name[2], label, 'bs')
 
     # Eaxmple
-    markers = ['bs', 'g^']
-    plot_multiple_EE312_data(measurements[0], units[0], name[0], measurements[1:3], units[1], name[1], name[1:3], markers)
+    # markers = ['bs', 'g^']
+    # plot_multiple_EE312_data(measurements[0], units[0], name[0], measurements[1:3], units[1], name[1], name[1:3], markers)
 
 
 
