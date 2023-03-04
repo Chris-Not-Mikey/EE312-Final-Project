@@ -19,7 +19,7 @@ This function takes the following arguments:
 7. y axis label (for example the filename) Should be a string
 8. Marker (for example 'bs' for blue square). Vals can be found here: https://matplotlib.org/stable/api/markers_api.html
 
-
+NOTE: At the moment this plot does not save the plot automatically. Screenshot it or save from GUI that pops up
 
 Example: plot_single_EE312_data(measurements[0], units[0], name[0], measurements[2], units[2], label, name[2], 'bs')
 
@@ -40,7 +40,20 @@ This function takes the following arguments:
 7. y axis label(S) (for example the filename) Should be a Python ARRAY 
 8. Marker (for example 'bs' for blue square). THIS IS AN ARRAY HERE.  Vals can be found here: https://matplotlib.org/stable/api/markers_api.html
 
+NOTE: At the moment this plot does not save the plot automatically. Screenshot it or save from GUI that pops up
 
 Example:  plot_multiple_EE312_data(measurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
 
-<img width="904" alt="image" src="https://user-images.githubusercontent.com/54165966/222874519-6f9a6162-50fe-4107-9a63-923da34adc18.png">
+<img width="752" alt="image" src="https://user-images.githubusercontent.com/54165966/222875204-305d3355-ff49-4e87-8509-02d56c1ea4fd.png">
+
+
+## read_EE312_CSV(f)
+
+This function takes the following arguments:
+1. filename. Should by a FULL PATH file name. Example: /Users/chris/Desktop/EE312_Final_Project/EE312-Final-Project/EE_312_2023_Friday/contact_chain_B6_SI/Contact_Chain_B6_C=0.5.csv
+
+This function returns the following:
+1. measurements = [] This is a multidimensional array, where each measurement corresponds to a different measurement dimension. This function will print which dimension is which, along with their units. For example measurements[0], could contain ALL the voltage sweep voltages [0,0.01,0.02,..], and measurements[2] could contain all the resitance measurements [1000,1004,998,..]
+2. units = []. This array holds the units corresponding to each dimension of measurements. For example units[0] = "V" (a string), and units[2] = "ohms"
+3. name = []. This array holds the name corresponding to each dimension of measurements. For example name[0] = "V1" (a string), and name[2] = "R"
+
