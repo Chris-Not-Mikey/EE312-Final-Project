@@ -172,8 +172,8 @@ if __name__ == "__main__":
     plot_single_EE312_data(measurements[0], units[0], name[0], measurements[2], units[2], name[2], label, 'bs')
 
     # Eaxmple
-    # markers = ['bs', 'g^']
-    # plot_multiple_EE312_data(measurements[0], units[0], name[0], measurements[1:3], units[1], name[1], name[1:3], markers)
+    markers = ['bs', 'g^']
+    plot_multiple_EE312_data(measurements[0], units[0], name[0], measurements[1:3], units[1], name[1], name[1:3], markers)
 
 
 
