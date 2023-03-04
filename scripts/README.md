@@ -5,6 +5,10 @@ To plot data, do the following:
 1. make a New python file. You can copy and pasted "plot_contact_chain.py" as a staring point
 2. Make sure the line "from process_utils import *" is at the top.
 3. Use functions from process_utils.py to plot your data
+4. Consult the API below for details
+
+
+# API
 
 
 ## plot_single_EE312_data
@@ -47,7 +51,7 @@ Example:  plot_multiple_EE312_data(measurements[0], units[0], name[0], R, units[
 <img width="752" alt="image" src="https://user-images.githubusercontent.com/54165966/222875204-305d3355-ff49-4e87-8509-02d56c1ea4fd.png">
 
 
-## read_EE312_CSV()
+## read_EE312_CSV
 
 This function takes the following arguments:
 1. filename. Should by a FULL PATH file name. Example: /Users/chris/Desktop/EE312_Final_Project/EE312-Final-Project/EE_312_2023_Friday/contact_chain_B6_SI/Contact_Chain_B6_C=0.5.csv
