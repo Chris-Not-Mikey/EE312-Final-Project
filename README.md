@@ -1,6 +1,9 @@
 # EE312-Final-Project
 For EE 312 @ Stanford
 
+## Scripts
+See the scripts folder for plotting and parsing scripts + our API to use these functions
+
 
 ## Members
 1. Chris
