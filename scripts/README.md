@@ -15,9 +15,9 @@ This function takes the following arguments:
 3. x axis name (for example V1). Should be a string 
 4. y axis data array  (for example voltage sweep). Should by a Python array
 5. y axis unit (for example ohms). Should be a string
-6. y axis label (for example the filename) Should be a string
-7.  x axis name (for example V1). Should be a string 
-8. Marker (for example 'bs' for blue square). Vals can be found here:
+6. y axis name (for example V1). Should be a string 
+7. y axis label (for example the filename) Should be a string
+8. Marker (for example 'bs' for blue square). Vals can be found here: https://matplotlib.org/stable/api/markers_api.html
 
 
 
@@ -28,5 +28,19 @@ Example: plot_single_EE312_data(measurements[0], units[0], name[0], measurements
 
 
 
+## plot_multiple_EE312_data
+
+This function takes the following arguments:
+1. x axis data array  (for example voltage sweep). Should by a Python array
+2. x axis unit (for example volts). Should be a string
+3. x axis name (for example V1). Should be a string 
+4. y axis data array(S)  (for example voltage sweep). Should by a Python ARRAY of arrays
+5. y axis unit (for example ohms). Should be a string
+6. y axis name (for example V1). Should be a string 
+7. y axis label(S) (for example the filename) Should be a Python ARRAY 
+8. Marker (for example 'bs' for blue square). THIS IS AN ARRAY HERE.  Vals can be found here: https://matplotlib.org/stable/api/markers_api.html
+
+
+Example:  plot_multiple_EE312_data(measurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
 
 <img width="904" alt="image" src="https://user-images.githubusercontent.com/54165966/222874519-6f9a6162-50fe-4107-9a63-923da34adc18.png">
