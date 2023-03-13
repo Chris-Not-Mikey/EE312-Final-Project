@@ -1,0 +1,14 @@
+S=10
+Index	V1	I1	V2	I2
+1	 1.0000 V	 670 fA	 0 V	 5.470 pA
+0 mV
+
+S=20
+Index	V1	I1	V2	I2
+1	 1.0000 V	 53.190 pA	 0 V	 -7.560 pA
+0 mV
+
+S=30
+Index	V1	I1	V2	I2
+1	 1.0000 V	 1.150 pA	 0 V	 4.680 pA
+0 mV

@@ -1,6 +1,7 @@
 from process_utils import *
 import os
 import numpy as np
+import matplotlib.transforms as mtransforms
 
 
 
@@ -11,6 +12,8 @@ if __name__ == "__main__":
         print("Invalid Number of arguments. Usage: python3",sys.argv[0] , "/path/to/files/ \n")
       
     dirname = sys.argv[1]
+
+    save_path = dirname[0:len(dirname)-1] + "_results/" 
 
 
     units = []
@@ -81,13 +84,29 @@ if __name__ == "__main__":
                 full_mat_labels.append(filename)
             
             #Plot all data for a given material
-            plot_multiple_EE312_data(measurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
-            plot_multiple_EE312_data(measurements[0], units[0], name[0], I, units[1], name[1], labels, markers)
+            plt = plot_multiple_EE312_data_save(measurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
+
+
+            meas_name = labels[0].split("=")
+            save_name = save_path  + meas_name[0] + "_R_" + ".png"
+            plt.savefig(save_name, dpi=300)
+            plt.close()
+
+            plt = plot_multiple_EE312_data_save(measurements[0], units[0], name[0], I, units[1], name[1], labels, markers)
+            save_name = save_path + meas_name[0] + "_I_"  + ".png"
+            plt.savefig(save_name,  dpi=300)
+            plt.close()
         
         
         plot_multiple_EE312_data(full_mat_measurements[0], units[0], name[0], full_mat_R, units[2], name[2], full_mat_labels, ['bs', 'b+', 'b*', 'bx', 'bp', 'b^', 'bo', 'gs', 'g+', 'g*', 'gx', 'gp', 'g^', 'go', 'rs', 'r+', 'r*', 'rx', 'rp', 'r^', 'ro', 'ys', 'y+', 'y*', 'yx', 'yp', 'y^', 'yo', 'ms', 'm+', 'm*', 'mx', 'mp', 'm^', 'mo'])
-        plot_multiple_EE312_data(full_mat_measurements[0], units[0], name[0], full_mat_I, units[1], name[1], full_mat_labels, ['bs', 'b+', 'b*', 'bx', 'bp', 'b^', 'bo', 'gs', 'g+', 'g*', 'gx', 'gp', 'g^', 'go', 'rs', 'r+', 'r*', 'rx', 'rp', 'r^', 'ro', 'ys', 'y+', 'y*', 'yx', 'yp', 'y^', 'yo', 'ms', 'm+', 'm*', 'mx', 'mp', 'm^', 'mo'])
+        save_name = save_path + "temp" + "_R_"  + ".png"
+        #plt.savefig(save_name,  dpi=300)
+        #plt.close()
 
+        plot_multiple_EE312_data(full_mat_measurements[0], units[0], name[0], full_mat_I, units[1], name[1], full_mat_labels, ['bs', 'b+', 'b*', 'bx', 'bp', 'b^', 'bo', 'gs', 'g+', 'g*', 'gx', 'gp', 'g^', 'go', 'rs', 'r+', 'r*', 'rx', 'rp', 'r^', 'ro', 'ys', 'y+', 'y*', 'yx', 'yp', 'y^', 'yo', 'ms', 'm+', 'm*', 'mx', 'mp', 'm^', 'mo'])
+        save_name = save_path + "temp" + "_I_"  + ".png"
+        #plt.savefig(save_name,  dpi=300)
+        #plt.close()
                 
      #/analysis/SerpentineInterdigitated/Smallest_Cont_All/  for continuity (serpentine)
      #/analysis/SerpentineInterdigitated/Smallest_Iso_All/  for isolation (interdigitated)

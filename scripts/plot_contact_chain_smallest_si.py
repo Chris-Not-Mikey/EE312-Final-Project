@@ -13,6 +13,7 @@ if __name__ == "__main__":
     dirname = sys.argv[1]
 
     R = []
+    I= []
     labels = []
     ameasurements = []
     units = []
@@ -35,6 +36,9 @@ if __name__ == "__main__":
         if (len(measurements[0]) != 21):
             adj_measurements = resample_single_EE312_data(measurements[2], 21)
             R.append(adj_measurements)
+            adj_measurements = resample_single_EE312_data(measurements[1], 21)
+            I.append(adj_measurements)
+
             labels.append(filename)
             counter = counter + 1
             continue
@@ -42,6 +46,7 @@ if __name__ == "__main__":
         ameasurements = measurements
 
         R.append(measurements[2])
+        I.append(measurements[1])
         labels.append(filename)
         counter = counter + 1
 
@@ -60,9 +65,21 @@ if __name__ == "__main__":
     R_means = list(R_np_means)
     R_std = list(R_np_std)
 
-    print(R_means)
-    print(R_std)
-    
+
+    I_np = np.array(I)
+
+    #Find mean and std of axis 1
+    I_np_means = np.mean(I, axis=0)
+    I_np_std = np.std(I, axis=0)
+
+    I_means = list(I_np_means)
+    I_std = list(I_np_std)
+
+
+
 
     plot_single_EE312_data_with_STD(ameasurements[0], units[0], name[0], R_np_means, units[2], name[2], labels[0], markers[0], R_std)
+
+
+    plot_single_EE312_data_with_STD(ameasurements[0], units[0], name[0], I_np_means, units[1], name[1], labels[0], markers[0], I_std)
 

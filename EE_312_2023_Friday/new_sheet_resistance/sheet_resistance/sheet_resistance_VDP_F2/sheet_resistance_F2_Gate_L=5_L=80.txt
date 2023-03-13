@@ -1,0 +1,14 @@
+S=10
+Index	V1	I1	V2	I2
+1	 1.0000 V	 -166.400 pA	 NaN V	 NaN A
+0 mV
+
+S=20
+Index	V1	I1	V2	I2
+1	 1.0000 V	 8.160 pA	 NaN V	 NaN A
+0 mV
+
+S=30
+Index	V1	I1	V2	I2
+1	 1.0000 V	 -1.080 pA	 NaN V	 NaN A
+0 mV

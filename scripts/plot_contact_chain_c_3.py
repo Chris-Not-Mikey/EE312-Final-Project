@@ -12,15 +12,18 @@ if __name__ == "__main__":
     dirname = sys.argv[1]
 
     R = []
+    I = []
     labels = []
     ameasurements = []
     units = []
     name = []
-    markers = ['bs', 'g^', 'ro', 'y+', 'o', 'b+', 'r^', 'bo', 'g+' ]
+    markers = ['bs', 'g^', 'ro', 'y+', 'o', 'b+', 'r^', 'bo', 'g+', 'm+' ]
 
     counter = 0
     for filename in os.listdir(dirname):
 
+        if (filename == ".DS_Store"):
+            continue
      
         if (counter == 9):
             break
@@ -36,6 +39,9 @@ if __name__ == "__main__":
         if (len(measurements[0]) != 21):
             adj_measurements = resample_single_EE312_data(measurements[2], 21)
             R.append(adj_measurements)
+            adj_measurements = resample_single_EE312_data(measurements[1], 21)
+            #ameasurements =  resample_single_EE312_data(measurements[0], 21)
+            I.append(adj_measurements)
             labels.append(filename)
             counter = counter + 1
             continue
@@ -43,9 +49,15 @@ if __name__ == "__main__":
         ameasurements = measurements
 
         R.append(measurements[2])
+        I.append(measurements[1])
         labels.append(filename)
         counter = counter + 1
 
-    
-    plot_multiple_EE312_data(ameasurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
+    print(name)
+    print(len(R))
+    #plot_multiple_EE312_data(ameasurements[0], units[0], name[0], R, units[2], name[2], labels, markers)
+
+
+    plot_multiple_EE312_data(ameasurements[0], units[0], name[0], I, units[1], name[1], labels, markers)
+
 

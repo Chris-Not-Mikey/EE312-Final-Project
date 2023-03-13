@@ -1,0 +1,14 @@
+S=10
+Index	V1	I1	V2	I2
+1	 1.0000 V	 94.0220 uA	 NaN V	 NaN A
+53.48 mV
+
+S=20
+Index	V1	I1	V2	I2
+1	 1.0000 V	 124.440 uA	 NaN V	 NaN A
+70.11 mV
+
+S=30
+Index	V1	I1	V2	I2
+1	 1.0000 V	 146.820 uA	 NaN V	 NaN A
+81.47 mV

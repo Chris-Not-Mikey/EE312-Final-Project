@@ -1,0 +1,27 @@
+S=10
+Index	V1	I1	V2	I2
+1	 1.0000 V	 -3.600 pA	 0 V	 -4.780 pA
+0 mV 
+
+S=20
+Index	V1	I1	V2	I2
+1	 1.0000 V	 92.560 pA	 0 V	 68.880 pA
+0 mV 
+
+S=30
+Index	V1	I1	V2	I2
+1	 1.0000 V	 998.640 nA	 0 V	 -3.020 pA
+Avg1 1.0158 V  Avg2 -17.3mV  AvgM > 167.19mV
+
+S=40
+Index	V1	I1	V2	I2
+1	 1.0000 V	 -36.570 pA	 0 V	 -4.230 pA
+0 mV
+
+S=50
+Index	V1	I1	V2	I2
+1	 1.0000 V	 -4.590 pA	 0 V	 -3.610 pA
+0mV
+
+
+
